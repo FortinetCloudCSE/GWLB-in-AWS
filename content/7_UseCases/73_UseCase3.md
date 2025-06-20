@@ -15,14 +15,14 @@ Here is an example of searching for the network interfaces of the load balancer 
 
 ![](image-elb-enis.png)
 
-You can enable this advanced or alternate resource mode for an SDN connector with the highlighted command below:
+You can enable this advanced or alternate resource mode for an SDN connector with the command **set alt-resource-ip enable**. Here is an example SDN config:
 ```
 config system sdn-connector
 edit aws-instance-role
 set status enable
 set type aws
 set use-metadata-iam enable
-**set alt-resource-ip enable**
+set alt-resource-ip enable
 next
 end
 ```
