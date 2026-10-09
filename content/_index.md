@@ -1,5 +1,5 @@
 ---
-title: "FortiGates & GWLB HA in AWS"
+title: "FortiGates & GWLB in AWS"
 weight: 1
 archetype: home
 ---

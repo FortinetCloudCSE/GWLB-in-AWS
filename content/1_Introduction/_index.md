@@ -4,9 +4,9 @@ menuTitle: "Introduction"
 weight: 10
 ---
 
-![](./fgts-gwlb1.png)
+![](../fgts-gwlb1.png)
 
-![](./fgts-gwlb2.png)
+![](../fgts-gwlb2.png)
 
 ## Welcome
 
