@@ -9,7 +9,7 @@ weight: 2
 
 GWLB supports two different models of firewall deployments, one-arm and two-arm where a firewall appliance can also perform NAT.
 
-In the one-arm model, the FortiGates will inspect traffic and forward this back to GWLB where internet bound traffic is has NAT applied by a NAT GW.  Typically, the NAT GW will be in a workload VPC in a distributed design.  Distributed designs have GWLBe endpoints in each workload VPC that requires to have an attached Internet Gateway (IGW) and public load balancer or NAT GW.
+In the one-arm model, the FortiGates will inspect traffic and forward this back to GWLB where internet bound traffic has NAT applied by a NAT GW.  Typically, the NAT GW will be in a workload VPC in a distributed egress design.  Distributed designs have GWLBe endpoints in each workload VPC that requires to have an attached Internet Gateway (IGW) and public load balancer or NAT GW. Centralized egress designs will have Cloud WAN or TGW to get traffic for workload VPCs and route this to the inspection VPC where GWLB, GLWBe endpoints, FortiGates, and the NAT GW are deployed.
 
 ![](image-one-arm.png)
 
@@ -44,7 +44,7 @@ next
 
 {{% expand title="**Two-Arm Model (Centralized)**" %}}
 
-In the two-arm model, the FortiGates will inspect traffic and forward & SNAT traffic out port1 (public interface) to act as a NAT GW.  This removes the need for deploying NAT GWs in each AZ of each workload VPC.  This is a centralized design where the data plane traffic used TGW to reach the GWLBe endpoints in the inspection/security VPC and be inspected by the FortiGates.
+In the two-arm model, the FortiGates will inspect traffic and forward & SNAT traffic out port1 (public interface) to act as a NAT GW.  This removes the need for deploying NAT GWs in each AZ of each workload VPC.  This is a centralized design where the data plane traffic used TGW to reach the GWLBe endpoints in the inspection VPC and be inspected by the FortiGates.
 
 ![](image-two-arm.png)
 
